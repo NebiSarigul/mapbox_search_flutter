@@ -14,6 +14,7 @@ class MapBoxPlaceSearchWidget extends StatefulWidget {
     this.country,
     this.types,
     this.language,
+    this.limit,
   });
 
   /// True if there is different search screen and you want to pop screen on select
