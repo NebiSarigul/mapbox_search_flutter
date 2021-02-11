@@ -54,6 +54,9 @@ class MapBoxPlaceSearchWidget extends StatefulWidget {
   //languages
   final String language;
 
+  //results limit
+  final int limit;
+
   @override
   _MapBoxPlaceSearchWidgetState createState() =>
       _MapBoxPlaceSearchWidgetState();
@@ -250,6 +253,7 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
         country: widget.country,
         language: widget.language,
         types: widget.types,
+        limit: widget.limit,
       );
 
       final predictions = await placesSearch.getPlaces(
