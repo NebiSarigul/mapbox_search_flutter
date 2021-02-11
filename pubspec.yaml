@@ -9,7 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  mapbox_search: ^2.0.0
+  mapbox_search: 
+    git:
+      url: https://github.com/NebiSarigul/mapbox_search.git
 
 dev_dependencies:
   flutter_test:

@@ -80,7 +80,7 @@ packages:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.0+4"
+    version: "0.12.2"
   http_parser:
     dependency: transitive
     description:
@@ -91,10 +91,12 @@ packages:
   mapbox_search:
     dependency: transitive
     description:
-      name: mapbox_search
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
+      path: "."
+      ref: HEAD
+      resolved-ref: ac37c7a96bdb0498b86cfee1e4cfcf35a63ca090
+      url: "https://github.com/NebiSarigul/mapbox_search.git"
+    source: git
+    version: "2.1.0"
   mapbox_search_flutter:
     dependency: "direct main"
     description:

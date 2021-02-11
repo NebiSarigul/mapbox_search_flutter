@@ -12,6 +12,8 @@ class MapBoxPlaceSearchWidget extends StatefulWidget {
     this.popOnSelect = false,
     this.location,
     this.country,
+    this.types,
+    this.language,
   });
 
   /// True if there is different search screen and you want to pop screen on select
@@ -45,6 +47,12 @@ class MapBoxPlaceSearchWidget extends StatefulWidget {
 
   ///Font Size
   final String fontSize;
+
+  //types
+  final String types;
+
+  //languages
+  final String language;
 
   @override
   _MapBoxPlaceSearchWidgetState createState() =>
@@ -240,6 +248,8 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
       var placesSearch = PlacesSearch(
         apiKey: widget.apiKey,
         country: widget.country,
+        language: widget.language,
+        types: widget.types,
       );
 
       final predictions = await placesSearch.getPlaces(
