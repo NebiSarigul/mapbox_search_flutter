@@ -15,6 +15,8 @@ class MapBoxPlaceSearchWidget extends StatefulWidget {
     this.types,
     this.language,
     this.limit,
+    this.buttonColor = Colors.blue,
+    this.separatorColor = Colors.black,
   });
 
   /// True if there is different search screen and you want to pop screen on select
@@ -57,6 +59,12 @@ class MapBoxPlaceSearchWidget extends StatefulWidget {
 
   //results limit
   final int limit;
+
+  //search button color
+  final Color buttonColor;
+
+  //listview separator color
+  final Color separatorColor;
 
   @override
   _MapBoxPlaceSearchWidgetState createState() =>
@@ -143,13 +151,16 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
                 Expanded(
                   child: Opacity(
                     opacity: _listOpacity.value,
-                    child: ListView(
+                    child: ListView.separated(
                       // addSemanticIndexes: true,
                       // itemExtent: 10,
-                      children: <Widget>[
-                        for (var places in _placePredictions)
-                          _placeOption(places),
-                      ],
+                      separatorBuilder: (context, index) => Divider(
+                        color: widget.separatorColor,
+                      ),
+                      itemBuilder: (BuildContext context, int index) {
+                        return _placeOption(_placePredictions[index]);
+                      },
+                      itemCount: _placePredictions.length,
                     ),
                   ),
                 ),
@@ -187,7 +198,7 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
           ),
           Container(width: 15),
           GestureDetector(
-            child: Icon(Icons.search, color: Colors.blue),
+            child: Icon(Icons.search, color: widget.buttonColor),
             onTap: () {},
           )
         ],
