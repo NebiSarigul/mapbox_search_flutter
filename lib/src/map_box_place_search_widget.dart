@@ -211,7 +211,7 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
     String fullName = prediction.placeName;
 
     return MaterialButton(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+      padding: EdgeInsets.symmetric(horizontal: 10),
       onPressed: () => _selectPlace(prediction),
       child: ListTile(
         title: Text(
