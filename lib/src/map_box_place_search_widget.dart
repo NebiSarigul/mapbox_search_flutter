@@ -151,12 +151,7 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
                 Expanded(
                   child: Opacity(
                     opacity: _listOpacity.value,
-                    child: ListView.separated(
-                      // addSemanticIndexes: true,
-                      // itemExtent: 10,
-                      separatorBuilder: (context, index) => Divider(
-                        color: widget.separatorColor,
-                      ),
+                    child: ListView.builder(
                       itemBuilder: (BuildContext context, int index) {
                         return _placeOption(_placePredictions[index]);
                       },
@@ -210,22 +205,25 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
     String place = prediction.text;
     String fullName = prediction.placeName;
 
-    return ListTile(
-      title: Text(
-        place.length < 45
-            ? "$place"
-            : "${place.replaceRange(45, place.length, "")} ...",
-        style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.04),
-        maxLines: 1,
+    return MaterialButton(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      onPressed: () => _selectPlace(prediction),
+      child: ListTile(
+        title: Text(
+          place.length < 45
+              ? "$place"
+              : "${place.replaceRange(45, place.length, "")} ...",
+          style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.04),
+          maxLines: 1,
+        ),
+        subtitle: Text(
+          fullName,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.03),
+          maxLines: 1,
+        ),
+        contentPadding: EdgeInsets.zero,
       ),
-      subtitle: Text(
-        fullName,
-        overflow: TextOverflow.ellipsis,
-        style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.03),
-        maxLines: 1,
-      ),
-      contentPadding: EdgeInsets.zero,
-      onTap: () => _selectPlace(prediction),
     );
   }
 
