@@ -151,7 +151,13 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
                 Expanded(
                   child: Opacity(
                     opacity: _listOpacity.value,
-                    child: ListView.builder(
+                    child: ListView.separated(
+                      separatorBuilder: (context, index) {
+                        return Divider(
+                          color: widget.separatorColor,
+                          height: 0.5,
+                        );
+                      },
                       itemBuilder: (BuildContext context, int index) {
                         return _placeOption(_placePredictions[index]);
                       },
@@ -192,10 +198,7 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
             ),
           ),
           Container(width: 15),
-          GestureDetector(
-            child: Icon(Icons.search, color: widget.buttonColor),
-            onTap: () {},
-          )
+          Icon(Icons.search, color: widget.buttonColor),
         ],
       ),
     );
