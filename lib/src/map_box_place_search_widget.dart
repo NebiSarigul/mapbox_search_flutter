@@ -186,7 +186,7 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
               onChanged: (value) async {
                 _debounceTimer?.cancel();
                 _debounceTimer = Timer(
-                  Duration(milliseconds: 750),
+                  Duration(milliseconds: 500),
                   () async {
                     await _autocompletePlace(value);
                     if (mounted) {
