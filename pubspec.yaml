@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
   mapbox_search: 
     git:
-      url: https://github.com/NebiSarigul/mapbox_search
+      url: https://github.com/NebiSarigul/mapbox_search.git
 
 dev_dependencies:
   flutter_test:
