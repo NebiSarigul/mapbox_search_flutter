@@ -2,7 +2,7 @@ name: mapbox_search_flutter
 description: This package provides some helper widgets to use with mapbox_search library.
 version: 1.0.6+1
 homepage: https://github.com/ketanchoyal/mapbox_search_flutter
-
+publish_to: none
 environment:
   sdk: ">=2.2.2 <3.0.0"
 
@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
   mapbox_search: 
     git:
-      url: https://github.com/NebiSarigul/mapbox_search.git
+      url: https://github.com/NebiSarigul/mapbox_search
 
 dev_dependencies:
   flutter_test:
