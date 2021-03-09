@@ -49,7 +49,7 @@ packages:
       name: color
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "3.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -86,8 +86,8 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: a8600298e9199c8535c993865debe3432aa5fce9
-      url: "https://github.com/NebiSarigul/mapbox_search.git"
+      resolved-ref: "384cd8b4aead5094e98e460a2ad8977cbc55e867"
+      url: "https://github.com/NebiSarigul/mapbox_search"
     source: git
     version: "2.1.0"
   matcher:
@@ -180,4 +180,4 @@ packages:
     source: hosted
     version: "2.1.0"
 sdks:
-  dart: ">=2.12.0-0.0 <3.0.0"
+  dart: ">=2.12.0 <3.0.0"
